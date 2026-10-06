@@ -4,18 +4,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Alexport | Perfumes, Relojes y Accesorios</title>
-  <meta name="description" content="Alexport - Perfumes, relojes y productos importados bajo pedido desde Estados Unidos.">
+  <title>Alexport | Perfumes, Relojes y Productos Importados</title>
+
+  <meta
+    name="description"
+    content="Alexport | Perfumes, relojes y productos seleccionados. Importados bajo pedido desde Estados Unidos."
+  >
 
   <style>
+
     :root {
-      --black: #0a0a0a;
-      --black-soft: #111111;
+      --black: #080808;
+      --black-2: #101010;
+      --black-3: #171717;
       --gold: #c9a45c;
-      --gold-light: #e4c985;
+      --gold-light: #e5c987;
       --white: #ffffff;
-      --gray: #b8b8b8;
-      --gray-dark: #1c1c1c;
+      --gray: #a7a7a7;
+      --line: rgba(201,164,92,.22);
     }
 
     * {
@@ -29,168 +35,170 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
       background: var(--black);
       color: var(--white);
-      line-height: 1.6;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
     }
 
     button {
       font-family: inherit;
     }
 
-    /* NAVBAR */
+    /* =========================
+       HEADER
+    ========================= */
 
-    .navbar {
+    header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(10, 10, 10, 0.96);
-      border-bottom: 1px solid rgba(201, 164, 92, 0.25);
-      backdrop-filter: blur(10px);
+      background: rgba(8,8,8,.96);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(12px);
     }
 
-    .nav-container {
-      max-width: 1200px;
+    .nav {
+      max-width: 1180px;
+      height: 78px;
       margin: auto;
-      height: 76px;
-      padding: 0 24px;
+      padding: 0 22px;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border: 1px solid var(--gold);
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    .brand-name {
-      font-size: 19px;
-      letter-spacing: 3px;
-      font-weight: 700;
-    }
-
-    .brand-tagline {
-      display: block;
-      font-size: 8px;
-      letter-spacing: 1.8px;
-      color: var(--gold);
-      margin-top: 1px;
+    .logo {
+      height: 54px;
+      width: auto;
+      object-fit: contain;
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      align-items: center;
+      gap: 30px;
       list-style: none;
-      font-size: 14px;
     }
 
     .nav-links a {
+      font-size: 13px;
       color: #ddd;
-      transition: 0.25s;
+      transition: .25s;
     }
 
     .nav-links a:hover {
       color: var(--gold);
     }
 
-    .menu-button {
+    .nav-button {
+      border: 1px solid var(--gold);
+      padding: 10px 16px;
+      color: var(--gold) !important;
+    }
+
+    .mobile-menu {
       display: none;
       background: none;
       border: 1px solid #333;
       color: white;
-      padding: 8px 10px;
+      padding: 8px 11px;
       cursor: pointer;
     }
 
-    /* HERO */
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
       min-height: 650px;
+
+      background:
+        radial-gradient(
+          circle at 80% 30%,
+          rgba(201,164,92,.13),
+          transparent 32%
+        ),
+        linear-gradient(
+          135deg,
+          #080808,
+          #111111
+        );
+
       display: flex;
       align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        radial-gradient(circle at 80% 30%, rgba(201,164,92,0.12), transparent 30%),
-        linear-gradient(135deg, #080808 0%, #111111 60%, #0b0b0b 100%);
     }
 
     .hero-container {
+      max-width: 1180px;
       width: 100%;
-      max-width: 1200px;
       margin: auto;
-      padding: 90px 24px;
+      padding: 90px 22px;
+
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 60px;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 70px;
       align-items: center;
     }
 
     .eyebrow {
       color: var(--gold);
+      font-size: 11px;
       letter-spacing: 4px;
-      font-size: 12px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
     }
 
     .hero h1 {
-      font-size: clamp(42px, 6vw, 76px);
-      line-height: 0.98;
+      font-family: Georgia, serif;
+      font-size: clamp(48px, 6vw, 78px);
+      line-height: .98;
+      font-weight: 400;
       letter-spacing: -2px;
-      max-width: 700px;
       margin-bottom: 25px;
     }
 
     .hero h1 span {
       color: var(--gold);
+      font-style: italic;
     }
 
-    .hero-text {
-      color: var(--gray);
+    .hero-description {
       max-width: 570px;
-      font-size: 17px;
-      margin-bottom: 35px;
+      color: var(--gray);
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 32px;
     }
 
     .hero-buttons {
       display: flex;
+      gap: 12px;
       flex-wrap: wrap;
-      gap: 14px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
+
       padding: 14px 23px;
-      border-radius: 2px;
-      font-weight: 700;
-      font-size: 13px;
-      letter-spacing: 0.5px;
-      cursor: pointer;
-      transition: 0.25s;
+
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      font-weight: bold;
+
+      transition: .25s;
     }
 
     .btn-gold {
@@ -204,7 +212,7 @@
     }
 
     .btn-outline {
-      border: 1px solid #555;
+      border: 1px solid #444;
       color: white;
     }
 
@@ -213,81 +221,84 @@
       color: var(--gold);
     }
 
-    .hero-card {
-      min-height: 390px;
-      border: 1px solid rgba(201,164,92,0.3);
-      background: linear-gradient(145deg, #161616, #0b0b0b);
+    .hero-visual {
+      min-height: 420px;
+
+      border: 1px solid var(--line);
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       position: relative;
+
+      background:
+        linear-gradient(
+          145deg,
+          #161616,
+          #090909
+        );
     }
 
-    .hero-card-content {
-      text-align: center;
-      padding: 40px;
-    }
-
-    .hero-symbol {
-      width: 150px;
-      height: 150px;
-      border: 1px solid var(--gold);
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      width: 280px;
+      height: 280px;
       border-radius: 50%;
-      margin: 0 auto 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: 42px;
-      font-weight: bold;
+      border: 1px solid rgba(201,164,92,.18);
     }
 
-    .hero-card h2 {
-      font-size: 25px;
-      margin-bottom: 8px;
+    .hero-logo {
+      width: 190px;
+      position: relative;
+      z-index: 2;
+      filter: drop-shadow(0 15px 30px rgba(0,0,0,.7));
     }
 
-    .hero-card p {
-      color: var(--gray);
-      font-size: 14px;
-    }
-
-    /* SECTIONS */
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
 
     section {
-      padding: 90px 24px;
+      padding: 90px 22px;
     }
 
-    .section-container {
-      max-width: 1200px;
+    .container {
+      max-width: 1180px;
       margin: auto;
     }
 
-    .section-header {
+    .section-heading {
       text-align: center;
       margin-bottom: 45px;
     }
 
     .section-label {
       color: var(--gold);
-      text-transform: uppercase;
+      font-size: 10px;
       letter-spacing: 3px;
-      font-size: 11px;
+      text-transform: uppercase;
       margin-bottom: 10px;
     }
 
-    .section-header h2 {
-      font-size: 38px;
+    .section-heading h2 {
+      font-family: Georgia, serif;
+      font-size: 42px;
+      font-weight: 400;
       margin-bottom: 12px;
     }
 
-    .section-header p {
-      color: var(--gray);
+    .section-heading p {
       max-width: 650px;
       margin: auto;
+      color: var(--gray);
+      font-size: 14px;
     }
 
-    /* CATEGORIES */
+    /* =========================
+       CATEGORIES
+    ========================= */
 
     .categories {
       background: #0d0d0d;
@@ -299,40 +310,49 @@
       gap: 16px;
     }
 
-    .category-card {
-      min-height: 180px;
-      border: 1px solid #292929;
-      background: #121212;
-      padding: 28px;
+    .category {
+      min-height: 190px;
+      padding: 25px;
+
+      background: #111;
+      border: 1px solid #242424;
+
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      transition: 0.3s;
+
+      transition: .3s;
     }
 
-    .category-card:hover {
+    .category:hover {
       border-color: var(--gold);
       transform: translateY(-4px);
     }
 
-    .category-icon {
-      font-size: 28px;
+    .category-number {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
       margin-bottom: auto;
     }
 
-    .category-card h3 {
-      font-size: 18px;
+    .category h3 {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: 400;
       margin-bottom: 5px;
     }
 
-    .category-card p {
+    .category p {
       color: var(--gray);
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    /* PRODUCTS */
+    /* =========================
+       PRODUCTS
+    ========================= */
 
-    .products-section {
+    .catalog {
       background: var(--black);
     }
 
@@ -340,92 +360,95 @@
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 9px;
+      gap: 8px;
       margin-bottom: 35px;
     }
 
-    .filter-btn {
-      background: #121212;
+    .filter {
+      background: #111;
       border: 1px solid #303030;
-      color: #ccc;
-      padding: 9px 15px;
+      color: #bbb;
+      padding: 9px 14px;
+      font-size: 11px;
       cursor: pointer;
-      font-size: 12px;
-      transition: 0.25s;
+      transition: .2s;
     }
 
-    .filter-btn:hover,
-    .filter-btn.active {
+    .filter:hover,
+    .filter.active {
       background: var(--gold);
-      color: #080808;
       border-color: var(--gold);
+      color: #080808;
     }
 
-    .product-grid {
+    .products {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
-    .product-card {
-      background: #111;
+    .product {
+      background: #101010;
       border: 1px solid #252525;
       overflow: hidden;
-      transition: 0.3s;
+      transition: .3s;
     }
 
-    .product-card:hover {
+    .product:hover {
       transform: translateY(-5px);
-      border-color: rgba(201,164,92,0.65);
+      border-color: rgba(201,164,92,.6);
     }
 
     .product-image {
-      height: 250px;
-      background: linear-gradient(145deg, #202020, #0b0b0b);
+      height: 300px;
+      background: #f5f5f5;
+
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
+
+      overflow: hidden;
     }
 
-    .product-placeholder {
-      width: 90px;
-      height: 150px;
-      border: 1px solid rgba(201,164,92,0.7);
-      border-radius: 8px 8px 18px 18px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--gold);
-      font-size: 11px;
-      text-align: center;
-      padding: 10px;
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+
+      transition: .4s;
+    }
+
+    .product:hover .product-image img {
+      transform: scale(1.035);
     }
 
     .product-info {
       padding: 20px;
     }
 
-    .product-brand {
+    .brand {
       color: var(--gold);
       font-size: 10px;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 5px;
+      margin-bottom: 6px;
     }
 
-    .product-name {
-      font-size: 18px;
+    .product h3 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: 400;
       margin-bottom: 8px;
     }
 
-    .product-description {
+    .description {
       color: var(--gray);
       font-size: 12px;
-      margin-bottom: 15px;
+      min-height: 38px;
+      margin-bottom: 13px;
     }
 
-    .product-tags {
+    .tags {
       display: flex;
       flex-wrap: wrap;
       gap: 5px;
@@ -433,36 +456,78 @@
     }
 
     .tag {
-      background: #1c1c1c;
-      color: #bbb;
-      border: 1px solid #2d2d2d;
+      border: 1px solid #303030;
+      background: #171717;
+      color: #aaa;
       padding: 4px 7px;
       font-size: 9px;
     }
 
-    .product-button {
+    .product-btn {
       width: 100%;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+
       padding: 11px;
-      background: transparent;
+
       border: 1px solid var(--gold);
       color: var(--gold);
-      font-size: 11px;
+
+      font-size: 10px;
       letter-spacing: 1px;
       font-weight: bold;
-      transition: 0.25s;
+
+      transition: .25s;
     }
 
-    .product-button:hover {
+    .product-btn:hover {
       background: var(--gold);
-      color: #000;
+      color: #080808;
     }
 
-    /* HOW IT WORKS */
+    /* =========================
+       WHY ALEXPORT
+    ========================= */
 
-    .how-section {
+    .why {
       background: #0d0d0d;
     }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .why-card {
+      padding: 30px;
+      border-top: 1px solid var(--gold);
+      background: #111;
+    }
+
+    .why-number {
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
+    }
+
+    .why-card h3 {
+      font-family: Georgia, serif;
+      font-size: 23px;
+      font-weight: 400;
+      margin-bottom: 9px;
+    }
+
+    .why-card p {
+      color: var(--gray);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       HOW TO BUY
+    ========================= */
 
     .steps {
       display: grid;
@@ -471,9 +536,9 @@
     }
 
     .step {
-      padding: 30px;
-      border-top: 1px solid var(--gold);
-      background: #121212;
+      padding: 28px;
+      border: 1px solid #242424;
+      background: #101010;
     }
 
     .step-number {
@@ -484,123 +549,98 @@
     }
 
     .step h3 {
+      font-family: Georgia, serif;
+      font-size: 21px;
+      font-weight: 400;
       margin-bottom: 8px;
     }
 
     .step p {
       color: var(--gray);
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    /* ABOUT */
-
-    .about {
-      background: #090909;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .about-logo {
-      min-height: 320px;
-      border: 1px solid rgba(201,164,92,0.35);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .about-logo-inner {
-      color: var(--gold);
-    }
-
-    .about-logo-inner strong {
-      display: block;
-      font-size: 55px;
-      letter-spacing: 5px;
-    }
-
-    .about-logo-inner small {
-      letter-spacing: 5px;
-    }
-
-    .about-text h2 {
-      font-size: 40px;
-      margin-bottom: 18px;
-    }
-
-    .about-text p {
-      color: var(--gray);
-      margin-bottom: 15px;
-    }
-
-    .about-highlight {
-      color: var(--gold);
-      font-weight: bold;
-    }
-
-    /* CTA */
+    /* =========================
+       CTA
+    ========================= */
 
     .cta {
-      padding: 80px 24px;
-      background: linear-gradient(135deg, #151515, #0a0a0a);
       text-align: center;
-      border-top: 1px solid #222;
-      border-bottom: 1px solid #222;
+
+      padding: 100px 22px;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(201,164,92,.11),
+          transparent 40%
+        ),
+        #0b0b0b;
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
     .cta h2 {
-      font-size: 40px;
+      font-family: Georgia, serif;
+      font-size: 45px;
+      font-weight: 400;
       margin-bottom: 12px;
     }
 
     .cta p {
-      color: var(--gray);
       max-width: 600px;
-      margin: 0 auto 25px;
+      margin: 0 auto 28px;
+      color: var(--gray);
+      font-size: 14px;
     }
 
-    /* FOOTER */
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      background: #060606;
-      padding: 45px 24px 25px;
+      background: #050505;
+      padding: 50px 22px 25px;
     }
 
-    .footer-container {
-      max-width: 1200px;
+    .footer-grid {
+      max-width: 1180px;
       margin: auto;
+
       display: grid;
       grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 40px;
+      gap: 50px;
+
       padding-bottom: 35px;
       border-bottom: 1px solid #222;
     }
 
-    .footer-brand {
-      font-size: 20px;
-      letter-spacing: 3px;
-      margin-bottom: 10px;
+    .footer-logo {
+      width: 150px;
+      margin-bottom: 15px;
+    }
+
+    .footer-description {
+      color: #777;
+      font-size: 12px;
+      max-width: 320px;
     }
 
     .footer-column h4 {
       color: var(--gold);
-      margin-bottom: 13px;
-      font-size: 12px;
-      letter-spacing: 1.5px;
+      font-size: 10px;
+      letter-spacing: 2px;
       text-transform: uppercase;
+      margin-bottom: 14px;
     }
 
-    .footer-column p,
     .footer-column a {
       display: block;
-      color: #999;
-      font-size: 13px;
-      margin-bottom: 6px;
+      color: #888;
+      font-size: 12px;
+      margin-bottom: 7px;
+      transition: .2s;
     }
 
     .footer-column a:hover {
@@ -608,123 +648,123 @@
     }
 
     .copyright {
-      max-width: 1200px;
+      max-width: 1180px;
       margin: 20px auto 0;
-      color: #666;
-      font-size: 11px;
+      color: #555;
       text-align: center;
+      font-size: 10px;
     }
 
-    /* WHATSAPP */
+    /* =========================
+       WHATSAPP
+    ========================= */
 
-    .whatsapp-float {
+    .whatsapp {
       position: fixed;
       right: 22px;
       bottom: 22px;
-      z-index: 999;
-      background: #25d366;
-      color: white;
+
       width: 58px;
       height: 58px;
+
       border-radius: 50%;
+
+      background: #25d366;
+      color: white;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       font-size: 25px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.35);
+
+      box-shadow: 0 8px 25px rgba(0,0,0,.4);
+
+      z-index: 999;
+
+      transition: .25s;
     }
 
-    .whatsapp-float:hover {
-      transform: scale(1.06);
+    .whatsapp:hover {
+      transform: scale(1.08);
     }
 
-    /* MOBILE */
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 900px) {
 
       .nav-links {
         display: none;
+
         position: absolute;
-        top: 76px;
+        top: 78px;
         left: 0;
         right: 0;
-        background: #0b0b0b;
-        padding: 20px 24px;
+
+        background: #090909;
+
         flex-direction: column;
-        border-bottom: 1px solid #292929;
+        align-items: flex-start;
+
+        padding: 22px;
+
+        border-bottom: 1px solid #222;
       }
 
       .nav-links.open {
         display: flex;
       }
 
-      .menu-button {
+      .mobile-menu {
         display: block;
       }
 
-      .hero-container,
-      .about-grid {
+      .hero-container {
         grid-template-columns: 1fr;
       }
 
-      .hero {
-        min-height: auto;
-      }
-
-      .hero-card {
-        min-height: 300px;
-      }
-
       .category-grid,
-      .product-grid,
-      .steps {
+      .products {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .footer-container {
+      .steps,
+      .why-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (max-width: 600px) {
 
-      .nav-container {
-        height: 68px;
+      .nav {
+        height: 70px;
       }
 
-      .brand-name {
-        font-size: 15px;
+      .logo {
+        height: 45px;
       }
 
-      .brand-tagline {
-        font-size: 7px;
+      .hero {
+        min-height: auto;
       }
 
       .hero-container {
         padding: 70px 20px;
+        gap: 45px;
       }
 
       .hero h1 {
-        font-size: 45px;
+        font-size: 48px;
       }
 
-      .hero-text {
-        font-size: 15px;
-      }
-
-      section {
-        padding: 65px 20px;
-      }
-
-      .section-header h2 {
-        font-size: 30px;
-      }
-
-      .category-grid,
-      .product-grid,
-      .steps,
-      .footer-container {
-        grid-template-columns: 1fr;
+      .hero-description {
+        font-size: 14px;
       }
 
       .hero-buttons {
@@ -735,57 +775,100 @@
         width: 100%;
       }
 
+      section {
+        padding: 70px 20px;
+      }
+
+      .section-heading h2 {
+        font-size: 34px;
+      }
+
+      .category-grid,
+      .products,
+      .steps,
+      .why-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
       .product-image {
-        height: 280px;
+        height: 330px;
       }
 
-      .about-text h2,
       .cta h2 {
-        font-size: 31px;
+        font-size: 35px;
       }
 
-      .whatsapp-float {
-        width: 54px;
-        height: 54px;
+      .whatsapp {
         right: 16px;
         bottom: 16px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="nav-container">
+  <!-- HEADER -->
 
-      <a href="#inicio" class="brand">
-        <div class="brand-mark">AP</div>
+  <header>
 
-        <div>
-          <div class="brand-name">ALEXPORT</div>
-          <span class="brand-tagline">FRAGANCIAS QUE TE ACOMPAÑAN SIEMPRE</span>
-        </div>
+    <div class="nav">
+
+      <a href="#inicio">
+        <img
+          src="alexport-logo.png"
+          alt="Alexport"
+          class="logo"
+        >
       </a>
 
-      <button class="menu-button" onclick="toggleMenu()">☰</button>
+      <button
+        class="mobile-menu"
+        onclick="toggleMenu()"
+        aria-label="Abrir menú"
+      >
+        ☰
+      </button>
 
       <nav>
+
         <ul class="nav-links" id="navLinks">
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#perfumes">Perfumes</a></li>
-          <li><a href="#relojes">Relojes</a></li>
-          <li><a href="#como-comprar">Cómo comprar</a></li>
-          <li><a href="#contacto">Contacto</a></li>
+
+          <li>
+            <a href="#inicio">Inicio</a>
+          </li>
+
+          <li>
+            <a href="#perfumes">Perfumes</a>
+          </li>
+
+          <li>
+            <a href="#categorias">Categorías</a>
+          </li>
+
+          <li>
+            <a href="#como-comprar">Cómo comprar</a>
+          </li>
+
+          <li>
+            <a href="#contacto" class="nav-button">
+              Contacto
+            </a>
+          </li>
+
         </ul>
+
       </nav>
 
     </div>
+
   </header>
 
 
   <!-- HERO -->
+
   <main id="inicio">
 
     <section class="hero">
@@ -793,44 +876,51 @@
       <div class="hero-container">
 
         <div>
-          <div class="eyebrow">ALEXPORT PARFUMS</div>
+
+          <div class="eyebrow">
+            ALEXPORT
+          </div>
 
           <h1>
-            Encuentra algo que
-            <span>hable de ti.</span>
+            Productos que
+            <span>van contigo.</span>
           </h1>
 
-          <p class="hero-text">
+          <p class="hero-description">
             Perfumes, relojes y productos seleccionados,
             importados bajo pedido desde Estados Unidos.
-            Te ayudamos a encontrar la opción ideal según
-            tu estilo, ocasión y presupuesto.
+            Encuentra opciones según tu estilo, ocasión
+            y presupuesto.
           </p>
 
           <div class="hero-buttons">
-            <a href="#perfumes" class="btn btn-gold">
+
+            <a
+              href="#perfumes"
+              class="btn btn-gold"
+            >
               VER PERFUMES
             </a>
 
-            <a href="#relojes" class="btn btn-outline">
-              VER RELOJES
+            <a
+              href="#categorias"
+              class="btn btn-outline"
+            >
+              EXPLORAR
             </a>
+
           </div>
+
         </div>
 
-        <div class="hero-card">
 
-          <div class="hero-card-content">
+        <div class="hero-visual">
 
-            <div class="hero-symbol">AP</div>
-
-            <h2>Alexport</h2>
-
-            <p>
-              Perfumes · Relojes · Accesorios
-            </p>
-
-          </div>
+          <img
+            src="alexport-logo.png"
+            alt="Alexport"
+            class="hero-logo"
+          >
 
         </div>
 
@@ -839,48 +929,112 @@
     </section>
 
 
-    <!-- CATEGORIES -->
-    <section class="categories">
+    <!-- CATEGORÍAS -->
 
-      <div class="section-container">
+    <section
+      class="categories"
+      id="categorias"
+    >
 
-        <div class="section-header">
+      <div class="container">
 
-          <div class="section-label">Explora</div>
+        <div class="section-heading">
 
-          <h2>Encuentra lo que buscas</h2>
+          <div class="section-label">
+            EXPLORA
+          </div>
+
+          <h2>
+            Encuentra lo que buscas
+          </h2>
 
           <p>
-            Seleccionamos productos para diferentes estilos,
-            ocasiones y necesidades.
+            Una selección de productos pensados para
+            diferentes estilos, ocasiones y necesidades.
           </p>
 
         </div>
 
+
         <div class="category-grid">
 
-          <a href="#perfumes" class="category-card">
-            <div class="category-icon">🧴</div>
-            <h3>Perfumes</h3>
-            <p>Árabes y de diseñador.</p>
+          <a
+            href="#perfumes"
+            class="category"
+          >
+
+            <div class="category-number">
+              01
+            </div>
+
+            <h3>
+              Perfumes
+            </h3>
+
+            <p>
+              Árabes y de diseñador.
+            </p>
+
           </a>
 
-          <a href="#relojes" class="category-card">
-            <div class="category-icon">⌚</div>
-            <h3>Relojes</h3>
-            <p>Modelos seleccionados.</p>
+
+          <a
+            href="#relojes"
+            class="category"
+          >
+
+            <div class="category-number">
+              02
+            </div>
+
+            <h3>
+              Relojes
+            </h3>
+
+            <p>
+              Modelos seleccionados.
+            </p>
+
           </a>
 
-          <a href="#perfumes" class="category-card">
-            <div class="category-icon">☀️</div>
-            <h3>Para el día</h3>
-            <p>Opciones frescas y versátiles.</p>
+
+          <a
+            href="#perfumes"
+            class="category"
+          >
+
+            <div class="category-number">
+              03
+            </div>
+
+            <h3>
+              Para el día
+            </h3>
+
+            <p>
+              Opciones frescas y versátiles.
+            </p>
+
           </a>
 
-          <a href="#perfumes" class="category-card">
-            <div class="category-icon">🌙</div>
-            <h3>Para la noche</h3>
-            <p>Fragancias con más presencia.</p>
+
+          <a
+            href="#perfumes"
+            class="category"
+          >
+
+            <div class="category-number">
+              04
+            </div>
+
+            <h3>
+              Para la noche
+            </h3>
+
+            <p>
+              Fragancias con mayor presencia.
+            </p>
+
           </a>
 
         </div>
@@ -891,19 +1045,27 @@
 
 
     <!-- PERFUMES -->
-    <section class="products-section" id="perfumes">
 
-      <div class="section-container">
+    <section
+      class="catalog"
+      id="perfumes"
+    >
 
-        <div class="section-header">
+      <div class="container">
 
-          <div class="section-label">Catálogo</div>
+        <div class="section-heading">
 
-          <h2>Perfumes</h2>
+          <div class="section-label">
+            CATÁLOGO
+          </div>
+
+          <h2>
+            Perfumes
+          </h2>
 
           <p>
-            Perfumes árabes y de diseñador seleccionados
-            para diferentes ocasiones.
+            Fragancias árabes y de diseñador
+            seleccionadas para diferentes ocasiones.
           </p>
 
         </div>
@@ -911,109 +1073,99 @@
 
         <div class="filters">
 
-          <button class="filter-btn active" onclick="filterProducts('all', this)">
-            Todos
+          <button
+            class="filter active"
+            onclick="filterProducts('all', this)"
+          >
+            TODOS
           </button>
 
-          <button class="filter-btn" onclick="filterProducts('hombre', this)">
-            Hombre
+          <button
+            class="filter"
+            onclick="filterProducts('hombre', this)"
+          >
+            HOMBRE
           </button>
 
-          <button class="filter-btn" onclick="filterProducts('mujer', this)">
-            Mujer
+          <button
+            class="filter"
+            onclick="filterProducts('mujer', this)"
+          >
+            MUJER
           </button>
 
-          <button class="filter-btn" onclick="filterProducts('unisex', this)">
-            Unisex
+          <button
+            class="filter"
+            onclick="filterProducts('unisex', this)"
+          >
+            UNISEX
           </button>
 
-          <button class="filter-btn" onclick="filterProducts('arabes', this)">
-            Árabes
-          </button>
-
-          <button class="filter-btn" onclick="filterProducts('disenador', this)">
-            Diseñador
+          <button
+            class="filter"
+            onclick="filterProducts('arabes', this)"
+          >
+            ÁRABES
           </button>
 
         </div>
 
 
-        <div class="product-grid" id="productGrid">
+        <div class="products">
 
 
-          <!-- PRODUCTO 1 -->
+          <!-- MANDARIN SKY -->
 
-          <article class="product-card" data-category="hombre arabes">
+          <article
+            class="product"
+            data-category="hombre arabes"
+          >
 
             <div class="product-image">
-              <div class="product-placeholder">
-                FOTO DEL<br>PRODUCTO
-              </div>
+
+              <img
+                src="mandarin-sky.jpg"
+                alt="Armaf Odyssey Mandarin Sky"
+              >
+
             </div>
 
             <div class="product-info">
 
-              <div class="product-brand">Lattafa</div>
-
-              <h3 class="product-name">
-                Asad
-              </h3>
-
-              <p class="product-description">
-                Intenso · Especiado · Ambarado
-              </p>
-
-              <div class="product-tags">
-                <span class="tag">Hombre</span>
-                <span class="tag">Noche</span>
-                <span class="tag">Frío</span>
+              <div class="brand">
+                Armaf
               </div>
 
-              <a
-                class="product-button"
-                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20Lattafa%20Asad.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
-                target="_blank">
-                CONSULTAR POR WHATSAPP
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <!-- PRODUCTO 2 -->
-
-          <article class="product-card" data-category="hombre arabes">
-
-            <div class="product-image">
-              <div class="product-placeholder">
-                FOTO DEL<br>PRODUCTO
-              </div>
-            </div>
-
-            <div class="product-info">
-
-              <div class="product-brand">Armaf</div>
-
-              <h3 class="product-name">
+              <h3>
                 Odyssey Mandarin Sky
               </h3>
 
-              <p class="product-description">
-                Cítrico · Frutal · Versátil
+              <p class="description">
+                Cítrico · Frutal · Dulce · Versátil
               </p>
 
-              <div class="product-tags">
-                <span class="tag">Hombre</span>
-                <span class="tag">Día</span>
-                <span class="tag">Calor</span>
+              <div class="tags">
+
+                <span class="tag">
+                  Hombre
+                </span>
+
+                <span class="tag">
+                  Día
+                </span>
+
+                <span class="tag">
+                  Calor
+                </span>
+
               </div>
 
               <a
-                class="product-button"
+                class="product-btn"
                 href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20Armaf%20Odyssey%20Mandarin%20Sky.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
-                target="_blank">
-                CONSULTAR POR WHATSAPP
+                target="_blank"
+              >
+                CONSULTAR PRECIO
               </a>
 
             </div>
@@ -1021,39 +1173,58 @@
           </article>
 
 
-          <!-- PRODUCTO 3 -->
+          <!-- AFNAN 9PM -->
 
-          <article class="product-card" data-category="unisex arabes">
+          <article
+            class="product"
+            data-category="hombre arabes"
+          >
 
             <div class="product-image">
-              <div class="product-placeholder">
-                FOTO DEL<br>PRODUCTO
-              </div>
+
+              <img
+                src="afnan-9pm.jpg"
+                alt="Afnan 9PM"
+              >
+
             </div>
 
             <div class="product-info">
 
-              <div class="product-brand">Lattafa</div>
+              <div class="brand">
+                Afnan
+              </div>
 
-              <h3 class="product-name">
-                Khamrah Qahwa
+              <h3>
+                9PM
               </h3>
 
-              <p class="product-description">
-                Dulce · Café · Especiado
+              <p class="description">
+                Dulce · Ambarado · Especiado
               </p>
 
-              <div class="product-tags">
-                <span class="tag">Unisex</span>
-                <span class="tag">Noche</span>
-                <span class="tag">Frío</span>
+              <div class="tags">
+
+                <span class="tag">
+                  Hombre
+                </span>
+
+                <span class="tag">
+                  Noche
+                </span>
+
+                <span class="tag">
+                  Frío
+                </span>
+
               </div>
 
               <a
-                class="product-button"
-                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20Lattafa%20Khamrah%20Qahwa.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
-                target="_blank">
-                CONSULTAR POR WHATSAPP
+                class="product-btn"
+                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20Afnan%209PM.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
+                target="_blank"
+              >
+                CONSULTAR PRECIO
               </a>
 
             </div>
@@ -1061,39 +1232,117 @@
           </article>
 
 
-          <!-- PRODUCTO 4 -->
+          <!-- LATTAFA ASAD -->
 
-          <article class="product-card" data-category="mujer arabes">
+          <article
+            class="product"
+            data-category="hombre arabes"
+          >
 
             <div class="product-image">
-              <div class="product-placeholder">
-                FOTO DEL<br>PRODUCTO
-              </div>
+
+              <img
+                src="lattafa-asad.jpg"
+                alt="Lattafa Asad"
+              >
+
             </div>
 
             <div class="product-info">
 
-              <div class="product-brand">Lattafa</div>
+              <div class="brand">
+                Lattafa
+              </div>
 
-              <h3 class="product-name">
+              <h3>
+                Asad
+              </h3>
+
+              <p class="description">
+                Especiado · Ambarado · Intenso
+              </p>
+
+              <div class="tags">
+
+                <span class="tag">
+                  Hombre
+                </span>
+
+                <span class="tag">
+                  Noche
+                </span>
+
+                <span class="tag">
+                  Frío
+                </span>
+
+              </div>
+
+              <a
+                class="product-btn"
+                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20Lattafa%20Asad.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
+                target="_blank"
+              >
+                CONSULTAR PRECIO
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- YARA -->
+
+          <article
+            class="product"
+            data-category="mujer arabes"
+          >
+
+            <div class="product-image">
+
+              <img
+                src="lattafa-yara.jpg"
+                alt="Lattafa Yara"
+              >
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="brand">
+                Lattafa
+              </div>
+
+              <h3>
                 Yara
               </h3>
 
-              <p class="product-description">
+              <p class="description">
                 Dulce · Cremoso · Suave
               </p>
 
-              <div class="product-tags">
-                <span class="tag">Mujer</span>
-                <span class="tag">Diario</span>
-                <span class="tag">Citas</span>
+              <div class="tags">
+
+                <span class="tag">
+                  Mujer
+                </span>
+
+                <span class="tag">
+                  Diario
+                </span>
+
+                <span class="tag">
+                  Citas
+                </span>
+
               </div>
 
               <a
-                class="product-button"
+                class="product-btn"
                 href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesada%20en%20Lattafa%20Yara.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
-                target="_blank">
-                CONSULTAR POR WHATSAPP
+                target="_blank"
+              >
+                CONSULTAR PRECIO
               </a>
 
             </div>
@@ -1110,182 +1359,85 @@
 
     <!-- RELOJES -->
 
-    <section class="categories" id="relojes">
+    <section
+      class="categories"
+      id="relojes"
+    >
 
-      <div class="section-container">
+      <div class="container">
 
-        <div class="section-header">
+        <div class="section-heading">
 
-          <div class="section-label">Catálogo</div>
+          <div class="section-label">
+            PRÓXIMAMENTE
+          </div>
 
-          <h2>Relojes</h2>
+          <h2>
+            Relojes
+          </h2>
 
           <p>
-            Modelos seleccionados de marcas reconocidas,
-            importados bajo pedido.
+            Estamos preparando nuestra selección de
+            relojes importados bajo pedido.
           </p>
 
         </div>
 
 
-        <div class="product-grid">
+        <div class="why-grid">
 
+          <div class="why-card">
 
-          <article class="product-card">
-
-            <div class="product-image">
-
-              <div class="product-placeholder">
-                FOTO DEL<br>RELOJ
-              </div>
-
+            <div class="why-number">
+              G-SHOCK
             </div>
 
-            <div class="product-info">
+            <h3>
+              Deportivos
+            </h3>
 
-              <div class="product-brand">G-Shock</div>
+            <p>
+              Modelos como GA-2100, GA-700,
+              GA-100 y más.
+            </p>
 
-              <h3 class="product-name">
-                GA-2100
-              </h3>
+          </div>
 
-              <p class="product-description">
-                Diseño deportivo · Resistente · Analógico/Digital
-              </p>
 
-              <div class="product-tags">
-                <span class="tag">G-Shock</span>
-                <span class="tag">Deportivo</span>
-              </div>
+          <div class="why-card">
 
-              <a
-                class="product-button"
-                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20el%20G-Shock%20GA-2100.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
-                target="_blank">
-                CONSULTAR POR WHATSAPP
-              </a>
-
+            <div class="why-number">
+              INVICTA
             </div>
 
-          </article>
+            <h3>
+              Diseños con presencia
+            </h3>
+
+            <p>
+              Speedway, Pro Diver y otros
+              modelos seleccionados.
+            </p>
+
+          </div>
 
 
-          <article class="product-card">
+          <div class="why-card">
 
-            <div class="product-image">
-
-              <div class="product-placeholder">
-                FOTO DEL<br>RELOJ
-              </div>
-
+            <div class="why-number">
+              ALEXPORT
             </div>
 
-            <div class="product-info">
+            <h3>
+              Bajo pedido
+            </h3>
 
-              <div class="product-brand">Invicta</div>
+            <p>
+              Consulta disponibilidad y precio
+              directamente por WhatsApp.
+            </p>
 
-              <h3 class="product-name">
-                Speedway
-              </h3>
-
-              <p class="product-description">
-                Deportivo · Cronógrafo · Diseño masculino
-              </p>
-
-              <div class="product-tags">
-                <span class="tag">Invicta</span>
-                <span class="tag">Cronógrafo</span>
-              </div>
-
-              <a
-                class="product-button"
-                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20un%20reloj%20Invicta%20Speedway.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
-                target="_blank">
-                CONSULTAR POR WHATSAPP
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <article class="product-card">
-
-            <div class="product-image">
-
-              <div class="product-placeholder">
-                FOTO DEL<br>RELOJ
-              </div>
-
-            </div>
-
-            <div class="product-info">
-
-              <div class="product-brand">G-Shock</div>
-
-              <h3 class="product-name">
-                GA-700
-              </h3>
-
-              <p class="product-description">
-                Deportivo · Resistente · Diseño robusto
-              </p>
-
-              <div class="product-tags">
-                <span class="tag">G-Shock</span>
-                <span class="tag">Sport</span>
-              </div>
-
-              <a
-                class="product-button"
-                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20el%20G-Shock%20GA-700.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
-                target="_blank">
-                CONSULTAR POR WHATSAPP
-              </a>
-
-            </div>
-
-          </article>
-
-
-          <article class="product-card">
-
-            <div class="product-image">
-
-              <div class="product-placeholder">
-                FOTO DEL<br>RELOJ
-              </div>
-
-            </div>
-
-            <div class="product-info">
-
-              <div class="product-brand">Invicta</div>
-
-              <h3 class="product-name">
-                Pro Diver
-              </h3>
-
-              <p class="product-description">
-                Deportivo · Elegante · Uso diario
-              </p>
-
-              <div class="product-tags">
-                <span class="tag">Invicta</span>
-                <span class="tag">Versátil</span>
-              </div>
-
-              <a
-                class="product-button"
-                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20un%20Invicta%20Pro%20Diver.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
-                target="_blank">
-                CONSULTAR POR WHATSAPP
-              </a>
-
-            </div>
-
-          </article>
-
+          </div>
 
         </div>
 
@@ -1294,20 +1446,108 @@
     </section>
 
 
-    <!-- HOW TO BUY -->
+    <!-- POR QUÉ ALEXPORT -->
 
-    <section class="how-section" id="como-comprar">
+    <section class="why">
 
-      <div class="section-container">
+      <div class="container">
 
-        <div class="section-header">
+        <div class="section-heading">
 
-          <div class="section-label">Proceso</div>
+          <div class="section-label">
+            ALEXPORT
+          </div>
 
-          <h2>¿Cómo comprar?</h2>
+          <h2>
+            ¿Por qué comprar con nosotros?
+          </h2>
+
+        </div>
+
+
+        <div class="why-grid">
+
+          <div class="why-card">
+
+            <div class="why-number">
+              01
+            </div>
+
+            <h3>
+              Selección
+            </h3>
+
+            <p>
+              Buscamos productos que realmente
+              valgan la pena y tengan buena relación
+              entre calidad, precio y demanda.
+            </p>
+
+          </div>
+
+
+          <div class="why-card">
+
+            <div class="why-number">
+              02
+            </div>
+
+            <h3>
+              Asesoría
+            </h3>
+
+            <p>
+              No tienes que elegir a ciegas.
+              Te ayudamos a encontrar una opción
+              según tus gustos y ocasión.
+            </p>
+
+          </div>
+
+
+          <div class="why-card">
+
+            <div class="why-number">
+              03
+            </div>
+
+            <h3>
+              Bajo pedido
+            </h3>
+
+            <p>
+              Trabajamos bajo pedido para ofrecer
+              mayor variedad sin depender de un
+              catálogo limitado de stock.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CÓMO COMPRAR -->
+
+    <section id="como-comprar">
+
+      <div class="container">
+
+        <div class="section-heading">
+
+          <div class="section-label">
+            PROCESO
+          </div>
+
+          <h2>
+            ¿Cómo comprar?
+          </h2>
 
           <p>
-            Comprar en Alexport es sencillo.
+            Un proceso sencillo y transparente.
           </p>
 
         </div>
@@ -1316,91 +1556,72 @@
         <div class="steps">
 
           <div class="step">
-            <div class="step-number">01</div>
-            <h3>Elige</h3>
+
+            <div class="step-number">
+              01
+            </div>
+
+            <h3>
+              Elige
+            </h3>
+
             <p>
-              Encuentra el perfume, reloj o producto
-              que te interese.
+              Encuentra el producto que
+              te interesa.
             </p>
+
           </div>
 
+
           <div class="step">
-            <div class="step-number">02</div>
-            <h3>Consulta</h3>
+
+            <div class="step-number">
+              02
+            </div>
+
+            <h3>
+              Consulta
+            </h3>
+
             <p>
-              Escríbenos por WhatsApp para conocer
+              Escríbenos para conocer
               precio y disponibilidad.
             </p>
+
           </div>
+
 
           <div class="step">
-            <div class="step-number">03</div>
-            <h3>Confirma</h3>
+
+            <div class="step-number">
+              03
+            </div>
+
+            <h3>
+              Confirma
+            </h3>
+
             <p>
-              Coordinamos tu pedido y las condiciones
-              de compra.
+              Coordinamos el pedido y
+              las condiciones de compra.
             </p>
+
           </div>
+
 
           <div class="step">
-            <div class="step-number">04</div>
-            <h3>Recibe</h3>
-            <p>
-              Realizamos la importación y coordinamos
-              la entrega.
-            </p>
-          </div>
 
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ABOUT -->
-
-    <section class="about">
-
-      <div class="section-container">
-
-        <div class="about-grid">
-
-          <div class="about-logo">
-
-            <div class="about-logo-inner">
-              <strong>AP</strong>
-              <small>ALEXPORT PARFUMS</small>
+            <div class="step-number">
+              04
             </div>
 
-          </div>
-
-
-          <div class="about-text">
-
-            <div class="section-label">
-              Sobre Alexport
-            </div>
-
-            <h2>
-              Productos seleccionados para ti.
-            </h2>
+            <h3>
+              Recibe
+            </h3>
 
             <p>
-              En Alexport buscamos productos que realmente
-              valgan la pena. Desde fragancias árabes y de
-              diseñador hasta relojes y accesorios.
-            </p>
-
-            <p>
-              Trabajamos principalmente bajo pedido,
-              permitiéndonos ofrecer una mayor variedad
-              sin necesidad de mantener grandes cantidades
-              de stock.
-            </p>
-
-            <p class="about-highlight">
-              Importados bajo pedido desde Estados Unidos.
+              Realizamos la importación y
+              coordinamos la entrega.
             </p>
 
           </div>
@@ -1414,19 +1635,26 @@
 
     <!-- CTA -->
 
-    <section class="cta" id="contacto">
+    <section
+      class="cta"
+      id="contacto"
+    >
 
-      <h2>¿Buscas algo en particular?</h2>
+      <h2>
+        ¿Buscas algo específico?
+      </h2>
 
       <p>
-        Cuéntanos qué producto estás buscando y te ayudamos
-        a encontrar una opción que se adapte a ti.
+        Cuéntanos qué producto estás buscando.
+        Podemos ayudarte a encontrar una opción
+        que se adapte a ti.
       </p>
 
       <a
         class="btn btn-gold"
         href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20buscando%20un%20producto.%20%C2%BFMe%20pueden%20ayudar%3F"
-        target="_blank">
+        target="_blank"
+      >
         HABLAR POR WHATSAPP
       </a>
 
@@ -1439,46 +1667,68 @@
 
   <footer>
 
-    <div class="footer-container">
+    <div class="footer-grid">
 
       <div>
-        <div class="footer-brand">
-          ALEXPORT
-        </div>
 
-        <p style="color:#888;font-size:13px;">
-          Fragancias que te acompañan siempre.
+        <img
+          src="alexport-logo.png"
+          alt="Alexport"
+          class="footer-logo"
+        >
+
+        <p class="footer-description">
+          Productos seleccionados, importados bajo pedido
+          desde Estados Unidos.
         </p>
-      </div>
-
-
-      <div class="footer-column">
-
-        <h4>Explorar</h4>
-
-        <a href="#perfumes">Perfumes</a>
-        <a href="#relojes">Relojes</a>
-        <a href="#como-comprar">Cómo comprar</a>
 
       </div>
 
 
       <div class="footer-column">
 
-        <h4>Contacto</h4>
+        <h4>
+          Explorar
+        </h4>
+
+        <a href="#inicio">
+          Inicio
+        </a>
+
+        <a href="#perfumes">
+          Perfumes
+        </a>
+
+        <a href="#relojes">
+          Relojes
+        </a>
+
+        <a href="#como-comprar">
+          Cómo comprar
+        </a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>
+          Contacto
+        </h4>
 
         <a
           href="https://wa.me/51904161206"
-          target="_blank">
+          target="_blank"
+        >
           WhatsApp
         </a>
 
         <a href="#">
-          Instagram
+          Facebook
         </a>
 
         <a href="#">
-          Facebook
+          Instagram
         </a>
 
       </div>
@@ -1493,13 +1743,14 @@
   </footer>
 
 
-  <!-- WHATSAPP FLOAT -->
+  <!-- WHATSAPP -->
 
   <a
-    class="whatsapp-float"
+    class="whatsapp"
     href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20quiero%20consultar%20por%20un%20producto."
     target="_blank"
-    aria-label="WhatsApp">
+    aria-label="WhatsApp"
+  >
     ☎
   </a>
 
@@ -1507,30 +1758,47 @@
   <script>
 
     function toggleMenu() {
+
       const menu = document.getElementById("navLinks");
+
       menu.classList.toggle("open");
+
     }
 
 
     function filterProducts(category, button) {
 
-      const products = document.querySelectorAll(".product-card");
-      const buttons = document.querySelectorAll(".filter-btn");
+      const products =
+        document.querySelectorAll(".product");
 
-      buttons.forEach(btn => {
+      const buttons =
+        document.querySelectorAll(".filter");
+
+      buttons.forEach(function(btn) {
+
         btn.classList.remove("active");
+
       });
 
       button.classList.add("active");
 
-      products.forEach(product => {
 
-        const categories = product.dataset.category || "";
+      products.forEach(function(product) {
 
-        if (category === "all" || categories.includes(category)) {
+        const categories =
+          product.dataset.category || "";
+
+        if (
+          category === "all" ||
+          categories.includes(category)
+        ) {
+
           product.style.display = "";
+
         } else {
+
           product.style.display = "none";
+
         }
 
       });
