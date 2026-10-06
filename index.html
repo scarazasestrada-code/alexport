@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Alexport | Perfumes, Relojes y Accesorios</title>
+  <meta name="description" content="Alexport - Perfumes, relojes y productos importados bajo pedido desde Estados Unidos.">
+
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --black-soft: #111111;
+      --gold: #c9a45c;
+      --gold-light: #e4c985;
+      --white: #ffffff;
+      --gray: #b8b8b8;
+      --gray-dark: #1c1c1c;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    /* NAVBAR */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(10, 10, 10, 0.96);
+      border-bottom: 1px solid rgba(201, 164, 92, 0.25);
+      backdrop-filter: blur(10px);
+    }
+
+    .nav-container {
+      max-width: 1200px;
+      margin: auto;
+      height: 76px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .brand-name {
+      font-size: 19px;
+      letter-spacing: 3px;
+      font-weight: 700;
+    }
+
+    .brand-tagline {
+      display: block;
+      font-size: 8px;
+      letter-spacing: 1.8px;
+      color: var(--gold);
+      margin-top: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: #ddd;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    .menu-button {
+      display: none;
+      background: none;
+      border: 1px solid #333;
+      color: white;
+      padding: 8px 10px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 30%, rgba(201,164,92,0.12), transparent 30%),
+        linear-gradient(135deg, #080808 0%, #111111 60%, #0b0b0b 100%);
+    }
+
+    .hero-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: auto;
+      padding: 90px 24px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 4px;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 76px);
+      line-height: 0.98;
+      letter-spacing: -2px;
+      max-width: 700px;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero-text {
+      color: var(--gray);
+      max-width: 570px;
+      font-size: 17px;
+      margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 23px;
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #080808;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #555;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-card {
+      min-height: 390px;
+      border: 1px solid rgba(201,164,92,0.3);
+      background: linear-gradient(145deg, #161616, #0b0b0b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .hero-card-content {
+      text-align: center;
+      padding: 40px;
+    }
+
+    .hero-symbol {
+      width: 150px;
+      height: 150px;
+      border: 1px solid var(--gold);
+      border-radius: 50%;
+      margin: 0 auto 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 42px;
+      font-weight: bold;
+    }
+
+    .hero-card h2 {
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+
+    .hero-card p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 24px;
+    }
+
+    .section-container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-label {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      margin-bottom: 10px;
+    }
+
+    .section-header h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .section-header p {
+      color: var(--gray);
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      background: #0d0d0d;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+
+    .category-card {
+      min-height: 180px;
+      border: 1px solid #292929;
+      background: #121212;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: 0.3s;
+    }
+
+    .category-card:hover {
+      border-color: var(--gold);
+      transform: translateY(-4px);
+    }
+
+    .category-icon {
+      font-size: 28px;
+      margin-bottom: auto;
+    }
+
+    .category-card h3 {
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .category-card p {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* PRODUCTS */
+
+    .products-section {
+      background: var(--black);
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-bottom: 35px;
+    }
+
+    .filter-btn {
+      background: #121212;
+      border: 1px solid #303030;
+      color: #ccc;
+      padding: 9px 15px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: 0.25s;
+    }
+
+    .filter-btn:hover,
+    .filter-btn.active {
+      background: var(--gold);
+      color: #080808;
+      border-color: var(--gold);
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .product-card {
+      background: #111;
+      border: 1px solid #252525;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(201,164,92,0.65);
+    }
+
+    .product-image {
+      height: 250px;
+      background: linear-gradient(145deg, #202020, #0b0b0b);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .product-placeholder {
+      width: 90px;
+      height: 150px;
+      border: 1px solid rgba(201,164,92,0.7);
+      border-radius: 8px 8px 18px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 11px;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .product-info {
+      padding: 20px;
+    }
+
+    .product-brand {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 5px;
+    }
+
+    .product-name {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .product-description {
+      color: var(--gray);
+      font-size: 12px;
+      margin-bottom: 15px;
+    }
+
+    .product-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 18px;
+    }
+
+    .tag {
+      background: #1c1c1c;
+      color: #bbb;
+      border: 1px solid #2d2d2d;
+      padding: 4px 7px;
+      font-size: 9px;
+    }
+
+    .product-button {
+      width: 100%;
+      text-align: center;
+      padding: 11px;
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-size: 11px;
+      letter-spacing: 1px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .product-button:hover {
+      background: var(--gold);
+      color: #000;
+    }
+
+    /* HOW IT WORKS */
+
+    .how-section {
+      background: #0d0d0d;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .step {
+      padding: 30px;
+      border-top: 1px solid var(--gold);
+      background: #121212;
+    }
+
+    .step-number {
+      color: var(--gold);
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .step h3 {
+      margin-bottom: 8px;
+    }
+
+    .step p {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: #090909;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-logo {
+      min-height: 320px;
+      border: 1px solid rgba(201,164,92,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .about-logo-inner {
+      color: var(--gold);
+    }
+
+    .about-logo-inner strong {
+      display: block;
+      font-size: 55px;
+      letter-spacing: 5px;
+    }
+
+    .about-logo-inner small {
+      letter-spacing: 5px;
+    }
+
+    .about-text h2 {
+      font-size: 40px;
+      margin-bottom: 18px;
+    }
+
+    .about-text p {
+      color: var(--gray);
+      margin-bottom: 15px;
+    }
+
+    .about-highlight {
+      color: var(--gold);
+      font-weight: bold;
+    }
+
+    /* CTA */
+
+    .cta {
+      padding: 80px 24px;
+      background: linear-gradient(135deg, #151515, #0a0a0a);
+      text-align: center;
+      border-top: 1px solid #222;
+      border-bottom: 1px solid #222;
+    }
+
+    .cta h2 {
+      font-size: 40px;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      color: var(--gray);
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #060606;
+      padding: 45px 24px 25px;
+    }
+
+    .footer-container {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 40px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid #222;
+    }
+
+    .footer-brand {
+      font-size: 20px;
+      letter-spacing: 3px;
+      margin-bottom: 10px;
+    }
+
+    .footer-column h4 {
+      color: var(--gold);
+      margin-bottom: 13px;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .footer-column p,
+    .footer-column a {
+      display: block;
+      color: #999;
+      font-size: 13px;
+      margin-bottom: 6px;
+    }
+
+    .footer-column a:hover {
+      color: var(--gold);
+    }
+
+    .copyright {
+      max-width: 1200px;
+      margin: 20px auto 0;
+      color: #666;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    /* WHATSAPP */
+
+    .whatsapp-float {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 999;
+      background: #25d366;
+      color: white;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.35);
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.06);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 76px;
+        left: 0;
+        right: 0;
+        background: #0b0b0b;
+        padding: 20px 24px;
+        flex-direction: column;
+        border-bottom: 1px solid #292929;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .hero-container,
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+
+      .hero-card {
+        min-height: 300px;
+      }
+
+      .category-grid,
+      .product-grid,
+      .steps {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .nav-container {
+        height: 68px;
+      }
+
+      .brand-name {
+        font-size: 15px;
+      }
+
+      .brand-tagline {
+        font-size: 7px;
+      }
+
+      .hero-container {
+        padding: 70px 20px;
+      }
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .hero-text {
+        font-size: 15px;
+      }
+
+      section {
+        padding: 65px 20px;
+      }
+
+      .section-header h2 {
+        font-size: 30px;
+      }
+
+      .category-grid,
+      .product-grid,
+      .steps,
+      .footer-container {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .product-image {
+        height: 280px;
+      }
+
+      .about-text h2,
+      .cta h2 {
+        font-size: 31px;
+      }
+
+      .whatsapp-float {
+        width: 54px;
+        height: 54px;
+        right: 16px;
+        bottom: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-container">
+
+      <a href="#inicio" class="brand">
+        <div class="brand-mark">AP</div>
+
+        <div>
+          <div class="brand-name">ALEXPORT</div>
+          <span class="brand-tagline">FRAGANCIAS QUE TE ACOMPAÑAN SIEMPRE</span>
+        </div>
+      </a>
+
+      <button class="menu-button" onclick="toggleMenu()">☰</button>
+
+      <nav>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#perfumes">Perfumes</a></li>
+          <li><a href="#relojes">Relojes</a></li>
+          <li><a href="#como-comprar">Cómo comprar</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <main id="inicio">
+
+    <section class="hero">
+
+      <div class="hero-container">
+
+        <div>
+          <div class="eyebrow">ALEXPORT PARFUMS</div>
+
+          <h1>
+            Encuentra algo que
+            <span>hable de ti.</span>
+          </h1>
+
+          <p class="hero-text">
+            Perfumes, relojes y productos seleccionados,
+            importados bajo pedido desde Estados Unidos.
+            Te ayudamos a encontrar la opción ideal según
+            tu estilo, ocasión y presupuesto.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#perfumes" class="btn btn-gold">
+              VER PERFUMES
+            </a>
+
+            <a href="#relojes" class="btn btn-outline">
+              VER RELOJES
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+
+          <div class="hero-card-content">
+
+            <div class="hero-symbol">AP</div>
+
+            <h2>Alexport</h2>
+
+            <p>
+              Perfumes · Relojes · Accesorios
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+
+      <div class="section-container">
+
+        <div class="section-header">
+
+          <div class="section-label">Explora</div>
+
+          <h2>Encuentra lo que buscas</h2>
+
+          <p>
+            Seleccionamos productos para diferentes estilos,
+            ocasiones y necesidades.
+          </p>
+
+        </div>
+
+        <div class="category-grid">
+
+          <a href="#perfumes" class="category-card">
+            <div class="category-icon">🧴</div>
+            <h3>Perfumes</h3>
+            <p>Árabes y de diseñador.</p>
+          </a>
+
+          <a href="#relojes" class="category-card">
+            <div class="category-icon">⌚</div>
+            <h3>Relojes</h3>
+            <p>Modelos seleccionados.</p>
+          </a>
+
+          <a href="#perfumes" class="category-card">
+            <div class="category-icon">☀️</div>
+            <h3>Para el día</h3>
+            <p>Opciones frescas y versátiles.</p>
+          </a>
+
+          <a href="#perfumes" class="category-card">
+            <div class="category-icon">🌙</div>
+            <h3>Para la noche</h3>
+            <p>Fragancias con más presencia.</p>
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PERFUMES -->
+    <section class="products-section" id="perfumes">
+
+      <div class="section-container">
+
+        <div class="section-header">
+
+          <div class="section-label">Catálogo</div>
+
+          <h2>Perfumes</h2>
+
+          <p>
+            Perfumes árabes y de diseñador seleccionados
+            para diferentes ocasiones.
+          </p>
+
+        </div>
+
+
+        <div class="filters">
+
+          <button class="filter-btn active" onclick="filterProducts('all', this)">
+            Todos
+          </button>
+
+          <button class="filter-btn" onclick="filterProducts('hombre', this)">
+            Hombre
+          </button>
+
+          <button class="filter-btn" onclick="filterProducts('mujer', this)">
+            Mujer
+          </button>
+
+          <button class="filter-btn" onclick="filterProducts('unisex', this)">
+            Unisex
+          </button>
+
+          <button class="filter-btn" onclick="filterProducts('arabes', this)">
+            Árabes
+          </button>
+
+          <button class="filter-btn" onclick="filterProducts('disenador', this)">
+            Diseñador
+          </button>
+
+        </div>
+
+
+        <div class="product-grid" id="productGrid">
+
+
+          <!-- PRODUCTO 1 -->
+
+          <article class="product-card" data-category="hombre arabes">
+
+            <div class="product-image">
+              <div class="product-placeholder">
+                FOTO DEL<br>PRODUCTO
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-brand">Lattafa</div>
+
+              <h3 class="product-name">
+                Asad
+              </h3>
+
+              <p class="product-description">
+                Intenso · Especiado · Ambarado
+              </p>
+
+              <div class="product-tags">
+                <span class="tag">Hombre</span>
+                <span class="tag">Noche</span>
+                <span class="tag">Frío</span>
+              </div>
+
+              <a
+                class="product-button"
+                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20Lattafa%20Asad.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
+                target="_blank">
+                CONSULTAR POR WHATSAPP
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCTO 2 -->
+
+          <article class="product-card" data-category="hombre arabes">
+
+            <div class="product-image">
+              <div class="product-placeholder">
+                FOTO DEL<br>PRODUCTO
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-brand">Armaf</div>
+
+              <h3 class="product-name">
+                Odyssey Mandarin Sky
+              </h3>
+
+              <p class="product-description">
+                Cítrico · Frutal · Versátil
+              </p>
+
+              <div class="product-tags">
+                <span class="tag">Hombre</span>
+                <span class="tag">Día</span>
+                <span class="tag">Calor</span>
+              </div>
+
+              <a
+                class="product-button"
+                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20Armaf%20Odyssey%20Mandarin%20Sky.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
+                target="_blank">
+                CONSULTAR POR WHATSAPP
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCTO 3 -->
+
+          <article class="product-card" data-category="unisex arabes">
+
+            <div class="product-image">
+              <div class="product-placeholder">
+                FOTO DEL<br>PRODUCTO
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-brand">Lattafa</div>
+
+              <h3 class="product-name">
+                Khamrah Qahwa
+              </h3>
+
+              <p class="product-description">
+                Dulce · Café · Especiado
+              </p>
+
+              <div class="product-tags">
+                <span class="tag">Unisex</span>
+                <span class="tag">Noche</span>
+                <span class="tag">Frío</span>
+              </div>
+
+              <a
+                class="product-button"
+                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20Lattafa%20Khamrah%20Qahwa.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
+                target="_blank">
+                CONSULTAR POR WHATSAPP
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- PRODUCTO 4 -->
+
+          <article class="product-card" data-category="mujer arabes">
+
+            <div class="product-image">
+              <div class="product-placeholder">
+                FOTO DEL<br>PRODUCTO
+              </div>
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-brand">Lattafa</div>
+
+              <h3 class="product-name">
+                Yara
+              </h3>
+
+              <p class="product-description">
+                Dulce · Cremoso · Suave
+              </p>
+
+              <div class="product-tags">
+                <span class="tag">Mujer</span>
+                <span class="tag">Diario</span>
+                <span class="tag">Citas</span>
+              </div>
+
+              <a
+                class="product-button"
+                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesada%20en%20Lattafa%20Yara.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
+                target="_blank">
+                CONSULTAR POR WHATSAPP
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- RELOJES -->
+
+    <section class="categories" id="relojes">
+
+      <div class="section-container">
+
+        <div class="section-header">
+
+          <div class="section-label">Catálogo</div>
+
+          <h2>Relojes</h2>
+
+          <p>
+            Modelos seleccionados de marcas reconocidas,
+            importados bajo pedido.
+          </p>
+
+        </div>
+
+
+        <div class="product-grid">
+
+
+          <article class="product-card">
+
+            <div class="product-image">
+
+              <div class="product-placeholder">
+                FOTO DEL<br>RELOJ
+              </div>
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-brand">G-Shock</div>
+
+              <h3 class="product-name">
+                GA-2100
+              </h3>
+
+              <p class="product-description">
+                Diseño deportivo · Resistente · Analógico/Digital
+              </p>
+
+              <div class="product-tags">
+                <span class="tag">G-Shock</span>
+                <span class="tag">Deportivo</span>
+              </div>
+
+              <a
+                class="product-button"
+                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20el%20G-Shock%20GA-2100.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
+                target="_blank">
+                CONSULTAR POR WHATSAPP
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="product-card">
+
+            <div class="product-image">
+
+              <div class="product-placeholder">
+                FOTO DEL<br>RELOJ
+              </div>
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-brand">Invicta</div>
+
+              <h3 class="product-name">
+                Speedway
+              </h3>
+
+              <p class="product-description">
+                Deportivo · Cronógrafo · Diseño masculino
+              </p>
+
+              <div class="product-tags">
+                <span class="tag">Invicta</span>
+                <span class="tag">Cronógrafo</span>
+              </div>
+
+              <a
+                class="product-button"
+                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20un%20reloj%20Invicta%20Speedway.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
+                target="_blank">
+                CONSULTAR POR WHATSAPP
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="product-card">
+
+            <div class="product-image">
+
+              <div class="product-placeholder">
+                FOTO DEL<br>RELOJ
+              </div>
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-brand">G-Shock</div>
+
+              <h3 class="product-name">
+                GA-700
+              </h3>
+
+              <p class="product-description">
+                Deportivo · Resistente · Diseño robusto
+              </p>
+
+              <div class="product-tags">
+                <span class="tag">G-Shock</span>
+                <span class="tag">Sport</span>
+              </div>
+
+              <a
+                class="product-button"
+                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20el%20G-Shock%20GA-700.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
+                target="_blank">
+                CONSULTAR POR WHATSAPP
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <article class="product-card">
+
+            <div class="product-image">
+
+              <div class="product-placeholder">
+                FOTO DEL<br>RELOJ
+              </div>
+
+            </div>
+
+            <div class="product-info">
+
+              <div class="product-brand">Invicta</div>
+
+              <h3 class="product-name">
+                Pro Diver
+              </h3>
+
+              <p class="product-description">
+                Deportivo · Elegante · Uso diario
+              </p>
+
+              <div class="product-tags">
+                <span class="tag">Invicta</span>
+                <span class="tag">Versátil</span>
+              </div>
+
+              <a
+                class="product-button"
+                href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20interesado%20en%20un%20Invicta%20Pro%20Diver.%20%C2%BFMe%20pueden%20brindar%20precio%20y%20disponibilidad%3F"
+                target="_blank">
+                CONSULTAR POR WHATSAPP
+              </a>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- HOW TO BUY -->
+
+    <section class="how-section" id="como-comprar">
+
+      <div class="section-container">
+
+        <div class="section-header">
+
+          <div class="section-label">Proceso</div>
+
+          <h2>¿Cómo comprar?</h2>
+
+          <p>
+            Comprar en Alexport es sencillo.
+          </p>
+
+        </div>
+
+
+        <div class="steps">
+
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Elige</h3>
+            <p>
+              Encuentra el perfume, reloj o producto
+              que te interese.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Consulta</h3>
+            <p>
+              Escríbenos por WhatsApp para conocer
+              precio y disponibilidad.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Confirma</h3>
+            <p>
+              Coordinamos tu pedido y las condiciones
+              de compra.
+            </p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">04</div>
+            <h3>Recibe</h3>
+            <p>
+              Realizamos la importación y coordinamos
+              la entrega.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section class="about">
+
+      <div class="section-container">
+
+        <div class="about-grid">
+
+          <div class="about-logo">
+
+            <div class="about-logo-inner">
+              <strong>AP</strong>
+              <small>ALEXPORT PARFUMS</small>
+            </div>
+
+          </div>
+
+
+          <div class="about-text">
+
+            <div class="section-label">
+              Sobre Alexport
+            </div>
+
+            <h2>
+              Productos seleccionados para ti.
+            </h2>
+
+            <p>
+              En Alexport buscamos productos que realmente
+              valgan la pena. Desde fragancias árabes y de
+              diseñador hasta relojes y accesorios.
+            </p>
+
+            <p>
+              Trabajamos principalmente bajo pedido,
+              permitiéndonos ofrecer una mayor variedad
+              sin necesidad de mantener grandes cantidades
+              de stock.
+            </p>
+
+            <p class="about-highlight">
+              Importados bajo pedido desde Estados Unidos.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta" id="contacto">
+
+      <h2>¿Buscas algo en particular?</h2>
+
+      <p>
+        Cuéntanos qué producto estás buscando y te ayudamos
+        a encontrar una opción que se adapte a ti.
+      </p>
+
+      <a
+        class="btn btn-gold"
+        href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20estoy%20buscando%20un%20producto.%20%C2%BFMe%20pueden%20ayudar%3F"
+        target="_blank">
+        HABLAR POR WHATSAPP
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="footer-container">
+
+      <div>
+        <div class="footer-brand">
+          ALEXPORT
+        </div>
+
+        <p style="color:#888;font-size:13px;">
+          Fragancias que te acompañan siempre.
+        </p>
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Explorar</h4>
+
+        <a href="#perfumes">Perfumes</a>
+        <a href="#relojes">Relojes</a>
+        <a href="#como-comprar">Cómo comprar</a>
+
+      </div>
+
+
+      <div class="footer-column">
+
+        <h4>Contacto</h4>
+
+        <a
+          href="https://wa.me/51904161206"
+          target="_blank">
+          WhatsApp
+        </a>
+
+        <a href="#">
+          Instagram
+        </a>
+
+        <a href="#">
+          Facebook
+        </a>
+
+      </div>
+
+    </div>
+
+
+    <div class="copyright">
+      © 2026 Alexport. Todos los derechos reservados.
+    </div>
+
+  </footer>
+
+
+  <!-- WHATSAPP FLOAT -->
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/51904161206?text=Hola%20Alexport%2C%20quiero%20consultar%20por%20un%20producto."
+    target="_blank"
+    aria-label="WhatsApp">
+    ☎
+  </a>
+
+
+  <script>
+
+    function toggleMenu() {
+      const menu = document.getElementById("navLinks");
+      menu.classList.toggle("open");
+    }
+
+
+    function filterProducts(category, button) {
+
+      const products = document.querySelectorAll(".product-card");
+      const buttons = document.querySelectorAll(".filter-btn");
+
+      buttons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      button.classList.add("active");
+
+      products.forEach(product => {
+
+        const categories = product.dataset.category || "";
+
+        if (category === "all" || categories.includes(category)) {
+          product.style.display = "";
+        } else {
+          product.style.display = "none";
+        }
+
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
